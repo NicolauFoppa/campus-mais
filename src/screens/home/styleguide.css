@@ -1,0 +1,10 @@
+:root {
+    --body-strong-font-family: "Inter", Helvetica;
+    --body-strong-font-size: 16px;
+    --body-strong-font-style: normal;
+    --body-strong-font-weight: 600;
+    --body-strong-letter-spacing: 0px;
+    --body-strong-line-height: 139, 9999976158142%;
+    --size-icon-large: 40px;
+    --size-radius-full: 9999px;
+}

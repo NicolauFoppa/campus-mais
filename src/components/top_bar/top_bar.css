@@ -1,0 +1,43 @@
+/* src/components/TopBar/TopBar.css */
+.top-bar-container {
+    background-color: #1a73e8;
+    border-radius: 0px 0px 20px 20px;
+    height: 96px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 390px;
+}
+
+.list-icon {
+    height: 48px !important;
+    left: 16px !important;
+    position: absolute !important;
+    top: 18px !important;
+    width: 48px !important;
+}
+
+.logo-image {
+    height: 77px;
+    left: 332px;
+    object-fit: cover;
+    position: absolute;
+    top: 9px;
+    width: 42px;
+}
+
+.title-text {
+    color: #191c21;
+    font-family: var(--body-strong-font-family);
+    /* Verifique se essas variáveis estão definidas no seu index.css */
+    font-size: var(--body-strong-font-size);
+    font-style: var(--body-strong-font-style);
+    font-weight: var(--body-strong-font-weight);
+    height: 40px;
+    left: 87px;
+    letter-spacing: var(--body-strong-font-spacing);
+    line-height: var(--body-strong-font-height);
+    position: absolute;
+    top: 25px;
+    width: 223px;
+}

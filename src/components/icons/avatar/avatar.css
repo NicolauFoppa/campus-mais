@@ -1,0 +1,28 @@
+/* src/components/icons/Avatar.css */
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    /* A mágica para deixar o container redondo */
+    overflow: hidden;
+    /* Garante que a imagem não vaze para fora do círculo */
+
+    /* Estilos para o texto (iniciais) */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Deixa as iniciais em maiúsculo */
+
+    /* Cor de fundo padrão, caso nenhuma seja gerada */
+    background-color: #71717a;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Garante que a imagem cubra o círculo sem distorcer */
+}

@@ -1,0 +1,13 @@
+.file {
+    height: 48px;
+    position: relative;
+    width: 48px;
+}
+
+.file .icon {
+    height: 44px;
+    left: 6px;
+    position: absolute;
+    top: 2px;
+    width: 36px;
+}

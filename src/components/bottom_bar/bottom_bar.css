@@ -1,0 +1,41 @@
+/* src/components/BottomBar/bottom_bar.css - VERSÃO CORRIGIDA */
+
+.bottom-bar-container {
+    /* Posicionando a barra em si */
+    position: absolute;
+    /* Posição absoluta em relação ao pai (.home-screen .div) */
+    bottom: 0;
+    /* Cola na parte de baixo */
+    left: 0;
+    width: 100%;
+    /* Ocupa toda a largura */
+    height: 66px;
+    /* Altura da barra */
+    background-color: #1a73e8;
+    border-radius: 20px 20px 0 0;
+    /* Bordas arredondadas apenas no topo */
+
+    /* Usando Flexbox para alinhar os ícones DENTRO da barra */
+    display: flex;
+    justify-content: space-around;
+    /* Distribui os ícones com espaço igual entre eles */
+    align-items: center;
+    /* Centraliza os ícones verticalmente */
+    padding: 0 10px;
+    /* Adiciona um pequeno espaçamento nas laterais */
+}
+
+/* Agora, os ícones não precisam mais de posicionamento absoluto! */
+/* Remova as regras antigas para .home-icon, .coffee-icon, e .avatar-instance */
+/* O Flexbox cuidará do alinhamento. Podemos apenas ajustar o tamanho se necessário. */
+
+.home-icon,
+.coffee-icon {
+    /* O tamanho já é controlado pela prop 'size' no componente Icon, então não precisamos de muito aqui */
+    cursor: pointer;
+}
+
+.logo-image {
+    /* Note que no JSX da BottomBar você usou 'logo-image' para o Avatar */
+    cursor: pointer;
+}

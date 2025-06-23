@@ -1,0 +1,13 @@
+.coffee {
+    height: 48px;
+    position: relative;
+    width: 48px;
+}
+
+.coffee .icon {
+    height: 44px;
+    left: 2px;
+    position: absolute;
+    top: 0;
+    width: 46px;
+}

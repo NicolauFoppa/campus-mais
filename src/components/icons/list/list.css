@@ -1,0 +1,13 @@
+.list {
+    height: 48px;
+    position: relative;
+    width: 48px;
+}
+
+.list .icon {
+    height: 28px;
+    left: 4px;
+    position: absolute;
+    top: 10px;
+    width: 40px;
+}
