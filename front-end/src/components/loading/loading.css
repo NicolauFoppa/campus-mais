@@ -1,0 +1,43 @@
+/* src/components/Loading/Loading.css */
+
+.loading-container {
+    /* Usa Flexbox para centralizar tudo perfeitamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* Ocupa toda a altura do container pai */
+    gap: 16px;
+    /* Espaço entre o spinner e o texto */
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #e5e7eb;
+    /* Cor de fundo do círculo (cinza claro) */
+
+    /* Cor principal do spinner, usando o azul do seu app */
+    border-top-color: #1a73e8;
+
+    /* Animação para girar */
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f2937;
+    /* Um preto suave, mais agradável que #000000 */
+    margin: 0;
+}
+
+/* Animação que faz o spinner girar */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
