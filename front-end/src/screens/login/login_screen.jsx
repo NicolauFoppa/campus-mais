@@ -1,10 +1,8 @@
-// frontend/src/screens/login/login_screen.jsx
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
-import { useAuth } from '../../context/auth_context'; // 1. Importamos nosso hook
-import { loginUser } from '../../services/api';      // Importa a função de API
+import { useAuth } from '../../context/auth_context';
+import { loginUser } from '../../services/api';
 import image1 from "../../assets/logo.png";
 import "./login_screen.css";
 
@@ -13,8 +11,7 @@ export const LoginScreen = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    // 2. AQUI ESTÁ A LINHA QUE FALTAVA!
-    // Pegamos a função 'login' que foi definida e exportada pelo nosso AuthContext.
+    //Função 'login' que foi definida e exportada pelo nosso AuthContext.
     const { login } = useAuth();
 
     const mailtoEsqueciSenha = `mailto:auth@ucs.br?subject=${encodeURIComponent("Solicitação de Redefinição de Senha")}&body=${encodeURIComponent("Olá, gostaria de solicitar a redefinição da minha senha. Meu e-mail de cadastro é: ")}`;
@@ -27,7 +24,6 @@ export const LoginScreen = () => {
         try {
             const data = await loginUser(credentials);
             if (data.success) {
-                // 3. Agora a função 'login' existe e pode ser chamada.
                 login(data);
                 toast.success('Login realizado com sucesso!');
                 navigate('/home');

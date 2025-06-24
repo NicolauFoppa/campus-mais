@@ -13,31 +13,30 @@ import "../home/home_screen.css";
 import "./matricula_screen.css";
 
 export const MatriculaScreen = () => {
-    const { user, setUser } = useAuth(); // Pegamos o usuário E a função para atualizá-lo
+    const { user, setUser } = useAuth(); // Função para pegar o usuário
 
     const [todasDisciplinas, setTodasDisciplinas] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    //Carrega as disciplinas do curso e as disciplinas do aluno
     useEffect(() => {
-        // 1. Damos um nome à nossa função async para ficar mais claro
         const carregarDisciplinas = async () => {
             try {
                 const disciplinas = await fetchAllDisciplinas();
                 setTodasDisciplinas(disciplinas);
             } catch (error) {
-                console.error("Erro no fetchAllDisciplinas:", error); // É bom logar o erro para depuração
+                console.error("Erro no fetchAllDisciplinas:", error); //Log caso ocorra algum erro
                 toast.error("Não foi possível carregar as disciplinas.");
             } finally {
                 // Este bloco será executado com sucesso ou com erro, garantindo que o loading termine
                 setLoading(false);
             }
         };
-
-        // 2. AQUI ESTÁ A LINHA QUE FALTAVA: nós executamos a função que acabamos de criar!
         carregarDisciplinas();
 
     }, []);
 
+    //Função para cancelar ou realizar a matricula
     const handleActionClick = async (disciplinaId, isMatriculado) => {
         const actionToast = toast.loading(isMatriculado ? 'Cancelando...' : 'Realizando matrícula...');
         try {

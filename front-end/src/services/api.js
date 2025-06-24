@@ -53,12 +53,11 @@ export const getMe = async (token) => {
 };
 
 export const fetchDisciplinasDoCurso = async (cursoId) => {
-    // Nota: Você precisará criar esta rota no seu backend!
     const response = await fetch(`${BASE_URL}/disciplinas`, { method: 'GET' });
     if (!response.ok) throw new Error('Falha ao buscar disciplinas do curso');
     const data = await response.json();
     // Supondo que a API retorna os dados dentro de uma chave "data"
-    return data.data.map(d => new Disciplina(d)); // Converte para nossas classes
+    return data.data.map(d => new Disciplina(d)); // Converte a classe disciplina
 };
 
 // Envia a lista de disciplinas selecionadas para o backend
@@ -75,7 +74,7 @@ export const matricularAluno = async (alunoId, disciplinaIds) => {
 // frontend/src/services/api.js
 // ...
 
-// Busca todas as disciplinas (vamos simplificar e buscar todas por enquanto)
+// Busca todas as disciplinas
 export const fetchAllDisciplinas = async () => {
 
     const response = await fetch(`${BASE_URL}/disciplinas`, { method: 'GET' });
