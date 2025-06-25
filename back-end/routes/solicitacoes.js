@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
     try {
 
         const { tipo, motivo } = req.body;
+        // Utilizamos um idFixo para os testes
         const alunoIdFixo = new mongoose.Types.ObjectId("6679b3a1b2c3d4e5f6a7b8d0"); // Verifique se este ID corresponde ao do seu seeder
 
         if (!tipo || !motivo) {
@@ -23,7 +24,7 @@ router.post('/', async (req, res) => {
             status: 'Pendente'
         });
 
-        // 3. Enviamos uma resposta de sucesso para o frontend
+        // Envia uma resposta de sucesso para o frontend
         res.status(201).json({ success: true, data: novaSolicitacao });
 
     } catch (err) {

@@ -1,4 +1,3 @@
-// backend/seeder.js
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
@@ -15,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI);
 
 // --- DADOS INICIAIS ---
 
-// 1. Definimos os IDs fixos para criar as relações facilmente
+// Definimos os IDs fixos para criar as relações facilmente
 const cursoCienciaDaComputacaoId = new mongoose.Types.ObjectId("6679b1a1b2c3d4e5f6a7b8c9");
 const adminUserId = new mongoose.Types.ObjectId();
 const alunoUserId = new mongoose.Types.ObjectId();
@@ -30,7 +29,7 @@ const cursos = [
 ];
 
 const disciplinas = [
-    // 2. Atribuímos o ID fixo à disciplina que queremos usar
+    // Atribuímos o ID fixo à disciplina que queremos usar
     { _id: disciplinaAlgoritmosId, codigo: 'CC101', nome: 'Algoritmos e Estrutura de Dados I' },
     { codigo: 'CC102', nome: 'Cálculo Diferencial e Integral' },
     { codigo: 'CC103', nome: 'Arquitetura de Computadores' },
@@ -56,8 +55,7 @@ const users = [
         matricula: '2025112233',
         curso: cursoCienciaDaComputacaoId,
 
-        // 3. A MÁGICA ACONTECE AQUI!
-        // Adicionamos o campo com um array contendo a referência da disciplina
+        //3. Adicionamos o campo com um array contendo a referência da disciplina
         disciplinasMatriculadas: [disciplinaAlgoritmosId]
     }
 ];
@@ -69,7 +67,6 @@ const solicitacoes = [
         motivo: 'Necessário para processo de estágio.',
         status: 'Aprovada'
     },
-    // ... outras solicitações
 ];
 
 // Função para importar os dados

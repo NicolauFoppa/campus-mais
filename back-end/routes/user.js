@@ -13,21 +13,20 @@ router.post('/login', async (req, res) => {
         const { email, senha } = req.body;
 
         // 1. Verificar se o usuário existe no banco de dados
-        // Usamos .select('+senha') para forçar o Mongoose a nos trazer a senha, que por padrão está oculta
         const user = await User.findOne({ email }).select('+senha');
 
         if (!user) {
             return res.status(401).json({ success: false, error: 'Credenciais inválidas' });
         }
 
-        // 2. Comparamos a senha enviada com a senha criptografada no banco
+        // 2. Compara a senha enviada com a senha criptografada no banco
         const isMatch = await bcrypt.compare(senha, user.senha);
 
         if (!isMatch) {
             return res.status(401).json({ success: false, error: 'Credenciais inválidas' });
         }
 
-        // 3. Se tudo estiver correto, criamos o Token (o "passe")
+        // 3. Se tudo estiver correto, cria o Token (o "passe")
         const payload = {
             id: user._id,
             nome: user.nome,
@@ -36,11 +35,11 @@ router.post('/login', async (req, res) => {
 
         const token = jwt.sign(
             payload,
-            process.env.JWT_SECRET, // Uma chave secreta que só o nosso servidor conhece
+            process.env.JWT_SECRET,
             { expiresIn: '1h' } // O token expira em 1 hora
         );
 
-        // 4. Enviamos a resposta de sucesso com o token
+        // 4. Envia a resposta de sucesso com o token
         res.status(200).json({
             success: true,
             token: token,
@@ -102,17 +101,10 @@ router.post('/:id/disciplinas', async (req, res) => {
 });
 
 router.get('/me', protect, (req, res) => {
-    // 2. Usamos o middleware 'protect' ANTES da lógica da rota.
-    //    Ele vai validar o token. Se o token for inválido, ele já retorna um erro 401.
-    //    Se for válido, ele coloca os dados do usuário em 'req.user' e chama a próxima função.
-
-    // 3. Se o código chegou até aqui, significa que o usuário está autenticado.
-    //    Apenas retornamos os dados que o middleware já encontrou para nós.
     res.status(200).json({ success: true, data: req.user });
 });
 
-// @desc    Cancelar a matrícula de um aluno em UMA disciplina
-// @route   DELETE /api/users/:userId/disciplinas/:disciplinaId
+
 router.delete('/:userId/disciplinas/:disciplinaId', async (req, res) => {
     try {
         // $pull remove o ID do array de matrículas
