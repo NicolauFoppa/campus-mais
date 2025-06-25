@@ -1,9 +1,6 @@
-// src/components/Icon/Icon.jsx
-
 import React from 'react';
 
-// 1. Importamos TODAS as imagens de ícones da nossa pasta organizada.
-//    Garanta que os nomes dos arquivos aqui correspondem aos nomes na sua pasta.
+// 1. Importa TODAS as imagens de ícones da nossa pasta organizada.
 import bookIcon from '../../assets/icons/book_icon.png';
 import chevronDownIcon from '../../assets/icons/chevron_down.png';
 import coffeeIcon from '../../assets/icons/coffee_icon.png';
@@ -12,8 +9,7 @@ import fileIcon from '../../assets/icons/file_icon.png';
 import homeIcon from '../../assets/icons/home_icon.png';
 import listIcon from '../../assets/icons/list_icon.png'; // Exemplo
 
-// 2. Criamos um "mapa" de nomes para as imagens.
-//    O nome que usamos aqui (ex: "book") será o que passaremos na prop "name".
+// 2. Cria um "mapa" de nomes para as imagens.
 const iconMap = {
     book: bookIcon,
     chevronDown: chevronDownIcon,
@@ -24,7 +20,6 @@ const iconMap = {
     list: listIcon
 };
 
-// 3. Este é o nosso componente reutilizável!
 export const Icon = ({ name, size = 48, className }) => {
     // Ele busca a imagem correta no mapa com base no nome recebido.
     const iconSrc = iconMap[name];
