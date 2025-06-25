@@ -1,4 +1,3 @@
-// backend/models/Documento.js
 const mongoose = require('mongoose');
 
 const DocumentoSchema = new mongoose.Schema({
@@ -12,15 +11,11 @@ const DocumentoSchema = new mongoose.Schema({
         default: Date.now,
         required: true
     },
-    // FK para Aluno (que é um tipo de Usuário)
     aluno: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    // No futuro, você poderia adicionar um campo para o conteúdo ou URL do documento
-    // conteudo: { type: Buffer }
-    // url: { type: String }
 });
 
 module.exports = mongoose.model('Documento', DocumentoSchema);

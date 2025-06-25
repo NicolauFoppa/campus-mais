@@ -1,4 +1,3 @@
-// backend/models/Disciplina.js
 const mongoose = require('mongoose');
 
 const DisciplinaSchema = new mongoose.Schema({

@@ -14,12 +14,11 @@ const CursoSchema = new mongoose.Schema({
         trim: true
     },
 
-    // AQUI ESTÁ A IMPLEMENTAÇÃO DA SUA TABELA Curso_Disciplina
-    disciplinas: [{ // 1. É um array, pois um curso pode ter VÁRIAS disciplinas
+    disciplinas: [{
 
-        type: mongoose.Schema.Types.ObjectId, // 2. Cada item no array é um ID de um documento MongoDB
+        type: mongoose.Schema.Types.ObjectId,
 
-        ref: 'Disciplina' // 3. ESSENCIAL: Diz ao Mongoose que estes IDs se referem a documentos no modelo 'Disciplina'
+        ref: 'Disciplina'
     }]
 }, { timestamps: true });
 

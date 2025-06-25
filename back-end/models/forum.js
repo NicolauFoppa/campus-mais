@@ -1,4 +1,3 @@
-// backend/models/Forum.js
 const mongoose = require('mongoose');
 
 const ForumSchema = new mongoose.Schema({
@@ -17,7 +16,6 @@ const ForumSchema = new mongoose.Schema({
         ref: 'User', // Referencia o usuário que criou o fórum
         required: true
     },
-    // Aqui modelamos a relação N:M de Participante_Forum
     participantes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User' // Um array de referências para todos os usuários participantes

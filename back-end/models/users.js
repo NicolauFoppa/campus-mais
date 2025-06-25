@@ -41,7 +41,7 @@ const UserSchema = new mongoose.Schema({
     }],
     // --- FIM DO CAMPO NOVO ---
 
-    disciplinasLecionadas: [{ // Este é para o professor
+    disciplinasLecionadas: [{ // Este é apenas para o professor
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Disciplina'
     }],

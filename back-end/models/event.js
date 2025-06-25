@@ -1,4 +1,3 @@
-// backend/models/Evento.js
 const mongoose = require('mongoose');
 
 const EventoSchema = new mongoose.Schema({

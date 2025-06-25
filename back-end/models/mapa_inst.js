@@ -1,4 +1,3 @@
-// backend/models/MapaInstituicao.js
 const mongoose = require('mongoose');
 
 // Este é um "sub-schema" que define a estrutura de cada coordenada.
@@ -15,7 +14,7 @@ const CoordenadaSchema = new mongoose.Schema({
     descricao: {
         type: String
     }
-}, { _id: false }); // Não precisamos de um _id para cada coordenada embutida
+}, { _id: false });
 
 
 const MapaInstituicaoSchema = new mongoose.Schema({
@@ -29,7 +28,6 @@ const MapaInstituicaoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Evento'
     },
-    // Aqui está a mágica: um array de documentos que seguem o CoordenadaSchema
     coordenadas: [CoordenadaSchema]
 });
 

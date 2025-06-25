@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const TopicSchema = new mongoose.Schema({
     // O campo "id(NN)(PK)" é automaticamente criado pelo MongoDB como "_id"
-    titulo: { // Corresponde ao seu campo "topico(NN)"
+    titulo: {
         type: String,
         required: [true, 'O título do tópico é obrigatório'],
         trim: true
