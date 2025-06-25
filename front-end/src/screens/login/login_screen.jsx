@@ -14,9 +14,11 @@ export const LoginScreen = () => {
     //Função 'login' que foi definida e exportada pelo nosso AuthContext.
     const { login } = useAuth();
 
+    //Funções para o esqueci a senha e o novo cadastro
     const mailtoEsqueciSenha = `mailto:auth@ucs.br?subject=${encodeURIComponent("Solicitação de Redefinição de Senha")}&body=${encodeURIComponent("Olá, gostaria de solicitar a redefinição da minha senha. Meu e-mail de cadastro é: ")}`;
     const mailtoNovoCadastro = `mailto:auth@ucs.br?subject=${encodeURIComponent("Solicitação de Novo Cadastro")}&body=${encodeURIComponent("Olá, gostaria de solicitar a criação de uma nova conta de acesso.")}`;
 
+    //Função quando o botão é apertado
     const handleSubmit = async (event) => {
         event.preventDefault();
         const credentials = { email, senha: password };

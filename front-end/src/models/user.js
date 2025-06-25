@@ -10,14 +10,11 @@ export class User {
         this.matricula = apiData.matricula || null;
         this.curso = apiData.curso ? (typeof apiData.curso === 'object' ? new Curso(apiData.curso) : apiData.curso) : null;
 
-        // LINHA FALTANTE ADICIONADA AQUI
-        // Garante que disciplinasMatriculadas seja um array, mesmo que a API não o envie
         this.disciplinasMatriculadas = apiData.disciplinasMatriculadas || [];
 
         this.disciplinasLecionadas = apiData.disciplinasLecionadas || [];
     }
 
-    /** Retorna as iniciais do nome do usuário. Ex: "Nicolau Foppa" -> "NF" */
     getInitials() {
         if (!this.nome) return '?';
         const parts = this.nome.split(' ');
@@ -25,7 +22,6 @@ export class User {
         return initials.substring(0, 2);
     }
 
-    /** Verifica se o usuário é de um determinado tipo */
     isRole(roleName) {
         return this.nivelAcesso === roleName;
     }

@@ -9,70 +9,49 @@
 
 .home-screen .div {
     background-color: #f9fafb;
-    /* Um cinza um pouco mais claro para o fundo */
     height: 844px;
     position: relative;
-    /* ESSENCIAL: para TopBar e BottomBar se posicionarem corretamente */
     width: 390px;
     overflow: hidden;
-    /* Esconde qualquer coisa que saia da tela */
 }
 
-/* NOVO: Container para o conteúdo principal (a grade de cards) */
 .home-content {
     position: absolute;
     top: 96px;
-    /* Começa abaixo da TopBar (que tem 96px de altura) */
     bottom: 66px;
-    /* Termina acima da BottomBar (que tem 66px de altura) */
     left: 0;
     right: 0;
 
     padding: 24px;
-    /* Espaçamento interno */
     overflow-y: auto;
-    /* Permite rolar a tela se houver muitos cards */
 
-    /* A MÁGICA DO CSS GRID! */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Cria 2 colunas de largura igual */
     gap: 20px;
-    /* Espaço entre os cards */
 }
 
-/* Estilo base para todos os cards */
 .card {
     background-color: #ffffff;
-    /* Fundo branco para os cards */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    /* Sombra suave */
     height: 142px;
-    /* Altura fixa como no design */
 
-    /* Usando Flexbox para centralizar o conteúdo DENTRO de cada card */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    /* Espaço entre o ícone e o texto */
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    /* Efeito suave ao passar o mouse */
 }
 
-/* Estilo para o título dentro do card */
 .card-title {
     color: #374151;
-    /* Cor de texto mais escura */
     font-family: "Poppins", sans-serif;
-    /* Uma fonte mais moderna, se quiser usar */
     font-size: 14px;
     font-weight: 500;
 }

@@ -11,10 +11,6 @@ export class Notificacao {
         this.dataEnvio = new Date(apiData.dataEnvio);
     }
 
-    /**
-     * Formata a data e hora de envio para o padrão brasileiro.
-     * @returns {string} - Ex: "25/12/2025 14:30"
-     */
     getFormattedTimestamp() {
         return this.dataEnvio.toLocaleString('pt-BR', { timeZone: 'UTC' });
     }

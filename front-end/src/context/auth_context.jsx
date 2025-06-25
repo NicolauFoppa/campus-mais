@@ -1,13 +1,13 @@
-// frontend/src/context/AuthContext.jsx - VERSÃO CORRETA E FINAL
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { User } from '../models/user';
 import { getMe } from '../services/api';
 
-// Criamos o contexto, mas NÃO o exportamos. Ele é um detalhe interno deste arquivo.
 const AuthContext = createContext(null);
 
-// Exportamos o Provedor, que irá envolver nossa aplicação
+//GERENCIA A AUTENTICAÇÃO GLOBAL CRIANDO FACILITANDO O ACESSO A ESSES DADOS
+//EM QUALQUER TELA
+
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -49,8 +49,6 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-// AQUI ESTÁ A CHAVE: Criamos e exportamos um hook customizado.
-// Ele que será usado pelos outros componentes.
 export const useAuth = () => {
     return useContext(AuthContext);
 };

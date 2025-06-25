@@ -1,7 +1,9 @@
 import React from "react";
-import { List } from "../icons/list/list"; // Ajuste o caminho se necessário
+import { List } from "../icons/list/list";
 import image2 from "../../assets/logo.png";
-import "./top_bar.css"; // Importa o CSS local
+import "./top_bar.css";
+
+//COMPONENTE DO TOP BAR 
 
 export const TopBar = () => {
     return (

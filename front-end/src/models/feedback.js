@@ -1,4 +1,3 @@
-// src/models/Feedback.js
 import { User } from './user';
 
 export class Feedback {

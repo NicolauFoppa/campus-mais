@@ -1,8 +1,5 @@
-/* src/screens/solic_doc/solicitar-doc-screen.css - APENAS ESTILOS DO FORMULÁRIO */
-
 .screen-layout {
     background-color: #f3f4f6;
-    /* <--- A COR DE FUNDO QUE VOCÊ PEDIU JÁ ESTÁ AQUI */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -11,24 +8,19 @@
 .screen-container {
     background-color: #f9fafb;
     height: 844px;
-    /* <--- A ALTURA QUE VOCÊ PEDIU JÁ ESTÁ AQUI */
     position: relative;
     width: 390px;
-    /* <--- A LARGURA QUE VOCÊ PEDIU JÁ ESTÁ AQUI */
     overflow: hidden;
 }
 
 .screen-content {
     position: absolute;
     top: 96px;
-    /* <-- ESTA LINHA ABAIXA O CONTEÚDO! (96px é a altura da TopBar) */
     bottom: 66px;
-    /* <-- Esta linha cria espaço para a BottomBar */
     left: 0;
     right: 0;
     padding: 24px;
     overflow-y: auto;
-    /* Permite rolar se o conteúdo for grande */
 }
 
 .solic-doc-form {
@@ -103,7 +95,6 @@
     transition: background-color 0.2s ease;
     box-shadow: 0px 4px 4px #00000040;
     margin-top: auto;
-    /* Empurra o botão para o final do formulário */
 }
 
 .form-button:hover {

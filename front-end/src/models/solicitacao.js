@@ -1,4 +1,3 @@
-// src/models/Solicitacao.js
 import { User } from './user';
 
 export class Solicitacao {
@@ -8,10 +7,9 @@ export class Solicitacao {
         this.motivo = apiData.motivo;
         this.status = apiData.status;
         this.aluno = apiData.aluno ? new User(apiData.aluno) : null;
-        this.createdAt = new Date(apiData.createdAt); // Converte a string de data para um objeto Date
+        this.createdAt = new Date(apiData.createdAt);
     }
 
-    /** Formata a data de criação para o padrão brasileiro */
     getFormattedDate() {
         return this.createdAt.toLocaleDateString('pt-BR', {
             day: '2-digit',
@@ -20,7 +18,6 @@ export class Solicitacao {
         });
     }
 
-    /** Retorna uma cor baseada no status para uso no CSS */
     getStatusColor() {
         switch (this.status) {
             case 'Aprovada': return 'green';

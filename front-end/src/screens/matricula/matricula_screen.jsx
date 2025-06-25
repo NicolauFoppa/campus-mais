@@ -28,7 +28,7 @@ export const MatriculaScreen = () => {
                 console.error("Erro no fetchAllDisciplinas:", error); //Log caso ocorra algum erro
                 toast.error("Não foi possível carregar as disciplinas.");
             } finally {
-                // Este bloco será executado com sucesso ou com erro, garantindo que o loading termine
+                // Este bloco será executado independente do resultado, garantindo que o loading termine
                 setLoading(false);
             }
         };

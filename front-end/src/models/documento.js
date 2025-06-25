@@ -1,4 +1,3 @@
-// src/models/Documento.js
 import { User } from './user';
 
 export class Documento {

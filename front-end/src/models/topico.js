@@ -1,4 +1,3 @@
-// src/models/Topic.js
 import { User } from './user';
 import { Forum } from './forum';
 

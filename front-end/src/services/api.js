@@ -1,9 +1,9 @@
-// frontend/src/services/api.js
-// ... outras funções como fetchDisciplinas ...
 
 import { Disciplina } from '../models/disciplina';
 
 const BASE_URL = 'http://localhost:5000/api';
+
+//CLASSE RESPONSÁVEL POR FAZER A COMUNICAÇÃO COM A API
 
 export const loginUser = async (credentials) => {
     try {
@@ -71,8 +71,6 @@ export const matricularAluno = async (alunoId, disciplinaIds) => {
     return await response.json();
 };
 
-// frontend/src/services/api.js
-// ...
 
 // Busca todas as disciplinas
 export const fetchAllDisciplinas = async () => {

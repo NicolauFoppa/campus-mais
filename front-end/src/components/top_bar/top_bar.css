@@ -29,7 +29,6 @@
 .title-text {
     color: #191c21;
     font-family: var(--body-strong-font-family);
-    /* Verifique se essas variáveis estão definidas no seu index.css */
     font-size: var(--body-strong-font-size);
     font-style: var(--body-strong-font-style);
     font-weight: var(--body-strong-font-weight);

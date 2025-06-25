@@ -1,15 +1,10 @@
-// src/screens/solic_doc/solic_doc_screen.jsx - VERSÃO CORRIGIDA E FINAL
-
 import React, { useState } from "react";
 import { TopBar } from "../../components/top_bar/top_bar";
 import { BottomBar } from "../../components/bottom_bar/bottom_bar";
 import { Icon } from "../../components/icons/icon";
 import toast from "react-hot-toast";
 import { DOCUMENT_TYPES } from "../../constants/documents";
-
-// 1. IMPORTAMOS O CSS DA HOME SCREEN PARA REUTILIZAR O LAYOUT!
 import "../home/home_screen.css";
-// 2. E também importamos o CSS específico desta tela.
 import "./solic_doc_screen.css";
 
 export const SolicitarDocScreen = () => {
@@ -24,47 +19,41 @@ export const SolicitarDocScreen = () => {
             return;
         }
 
-        // 1. Preparamos os dados para enviar para a API
         const payload = {
             tipo: documentType,
-            motivo: reason, // Adicionei o motivo ao envio
+            motivo: reason,
         };
 
         try {
-            // 2. Fazemos a chamada de API usando fetch()
             const response = await fetch('http://localhost:5000/api/solicitacoes', {
-                method: 'POST', // O método para criar dados
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json', // Avisamos que estamos enviando JSON
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(payload), // Convertemos nosso objeto JS para uma string JSON
+                body: JSON.stringify(payload),
             });
 
-            // 3. Verificamos se a API respondeu com sucesso
+
             if (response.ok) {
                 toast.success("Solicitação enviada com sucesso!");
-                // Limpa os campos do formulário após o sucesso
+
                 setDocumentType("");
                 setReason("");
             } else {
-                // Se a API deu um erro (ex: validação falhou)
                 const errorData = await response.json();
                 toast.error(`Falha ao enviar: ${errorData.error || 'Erro desconhecido'}`);
             }
         } catch (error) {
-            // Se houver um erro de rede (ex: backend desligado)
             console.error("Erro de rede:", error);
             toast.error("Não foi possível conectar ao servidor.");
         }
     };
 
     return (
-        // 3. USAMOS AS MESMAS CLASSES DE LAYOUT DA HOME SCREEN
         <div className="screen-layout">
             <div className="screen-container">
                 <TopBar />
 
-                {/* O conteúdo principal usa a classe base .screen-content */}
                 <main className="screen-content">
                     <form className="solic-doc-form" onSubmit={handleSubmit}>
 

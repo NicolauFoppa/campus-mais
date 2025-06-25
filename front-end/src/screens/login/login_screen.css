@@ -1,5 +1,3 @@
-/* VERSÃO FINAL E CORRETA - login_screen.css */
-
 .login-screen {
     background-color: #f3f4f6;
     display: flex;
@@ -17,7 +15,6 @@
     width: 390px;
 }
 
-/* Mantemos o estilo da imagem (logo) */
 .login-screen .image {
     height: 199px;
     left: 141px;
@@ -27,7 +24,6 @@
     width: 108px;
 }
 
-/* Mantemos o estilo do link "Esqueci minha senha" */
 .login-screen .text-wrapper-3 {
     color: #1a73e8;
     font-family: "PoetsenOne-Regular", Helvetica;
@@ -40,7 +36,6 @@
     top: 446px;
 }
 
-/* Mantemos os estilos do texto "Não possui uma conta?" */
 .login-screen .n-o-possui-uma-conta {
     color: transparent;
     font-family: "PoetsenOne-Regular", Helvetica;
@@ -62,9 +57,6 @@
 }
 
 
-/* --- NOVAS REGRAS PARA OS INPUTS E BOTÃO --- */
-
-/* Estilo geral para os campos de input */
 .input-field {
     background-color: #d5ddef;
     border: 1px solid #0000004c;
@@ -75,14 +67,12 @@
     position: absolute;
     left: 33px;
 
-    /* Estilos para o texto DENTRO do input */
     padding-left: 14px;
     color: #191c21;
     font-family: "PoetsenOne-Regular", Helvetica;
     font-size: 14px;
 }
 
-/* Posicionamento específico para cada campo */
 .input-field[type="email"] {
     top: 344px;
 }
@@ -91,7 +81,6 @@
     top: 407px;
 }
 
-/* Estilo para o botão */
 .button-wrapper {
     background-color: #1a73e8;
     border-radius: 20px;
@@ -104,7 +93,6 @@
     border: none;
     cursor: pointer;
 
-    /* Estilo para o texto DENTRO do botão */
     color: #fff5ea;
     font-family: "PoetsenOne-Regular", Helvetica;
     font-size: 16px;
